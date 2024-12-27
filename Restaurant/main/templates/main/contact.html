@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   Contact Us
+{% endblock title %}
+
+{% block content %}
+   <!-- contact section start -->
+   <div class="contact_section layout_padding">
+      <div class="container">
+         <h1 class="contact_text">Our Contact</h1>
+         <p class="pin fs-3 text-center">GET IN TOUCH</p>
+         <p class="pin"><span style='color:rgba(143, 97, 189, 0.151)'>Our Friendly Team </span>would love to hear from you</p>
+      </div>
+   </div>
+
+   <div class="services_section_2">
+      <div class="row">
+         <div class="col-lg-4 col-sm-12 col-md-4">
+            <div class="box_main">
+               <div class="house_icon"></div>
+               <h3 class="decorate_text"><i class="fa-sharp fa-solid fa-location-dot"></i>LOCATION</h3>
+               <p class="tation_text">Kavre 8, Dhulikhel</p>
+               <div class="readmore_bt"><a href="#">Read More</a></div>
+            </div>
+         </div>
+         <div class="col-lg-4 col-sm-12 col-md-4">
+            <div class="box_main">
+               <div class="house_icon"></div>
+               <h3 class="decorate_text"><i class="fa-solid fa-phone"></i>PHONE</h3>
+               <p class="tation_text">Mobile:(+977) 9849927317</p>
+               <div class="readmore_bt"><a href="#">Read More</a></div>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-sm-12 col-md-4">
+            <div class="box_main">
+               <div class="house_icon"></div>
+               <h3 class="decorate_text"><i class="fa-solid fa-envelope"></i>EMAIL</h3>
+               <p class="tation_text">Email: syangtansabina8gmail.com</p>
+               <div class="readmore_bt"><a href="#">Read More</a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="contact_section_2 layout_padding">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-6 padding_0">
+               <div class="form-container form-container-1">
+                  <form method="POST" action="">
+                     {% csrf_token %}
+                     <h1 style="color: #021011d8; font-size: 50px; border-bottom: 3px solid #0f0438;" class="text-center"><b>GET IN TOUCH</b></h1>
+
+                     <div class="form-container">
+                        {% if messages %}
+                           {% for message in messages %}
+                              <div class="alert alert-dark fade show text-center my-3" role="alert">
+                                 <strong></strong>{{ message }}
+                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                              </div>
+                           {% endfor %}
+                        {% endif %}
+
+                        <div class="form">
+                           <input required="" placeholder="Enter your name" type="text" class="input" name="name">
+                           <input required="" placeholder="Email" type="email" class="input" name="email">
+                           <input required="" placeholder="Phone Number" type="tel" class="input" name="phone">
+                           <textarea required="" placeholder="Say Hello" rows="10" cols="30" id="message" name="message" class="textarea"></textarea>
+                           <div class="button-container">
+                              <input type="submit" value="Send" class="send-button">
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+
+            <div class="col-md-6 padding_0">
+               <div class="map-responsive">
+                  <h1 style="color: black; font-size: 50px;" class="text-center"><b>OUR LOCATION</b></h1>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28280.0753740202!2d85.53793037657583!3d27.624224852590835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb08e1e0b24703%3A0xbfe3729cdad70132!2sDhulikhel!5e0!3m2!1sen!2snp!4v1734364791282!5m2!1sen!2snp"
+                     width="600px" height="620px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+{% endblock content %}

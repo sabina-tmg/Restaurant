@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+ Our Menu
+   
+{% endblock title %}
+   
+
+{% block content %}
+<!-- gallery section start -->
+<div class="gallery_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12">
+            <h1 class="gallery_taital">Our Menu</h1>
+            <p class="gallery_text"><span style="color:rgb(22, 155, 44)">Our menu is more than just momos</span><br><span style="color: #20201f;"> a variety of
+               dishes to cater to all tastes and preferences.</span></p>
+         </div>
+      </div>
+      <div>
+         <h1 class="just">Scan the QR code</h1>
+         <div class="qr-image">
+             <img src="{% static 'images/payment.png' %}" alt="QR Code">
+         </div>
+     </div>     
+      <div class="gallery_section_2">
+         <div class="row">
+            {% for i in buff %}
+            <div class="col-md-4">
+               <div class="container_main">
+                  <img src="{{ i.image.url }}" alt="Avatar" class="image">
+                  <span>"{{ i.title }}"</span>
+                  <p class="card-price">रु{{ i.price }}</p>
+                  <div class="overlay">
+                     <div class="text"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+
+      <div class="gallery_section_2">
+         <div class="row">
+            {% for i in chicken %}
+            <div class="col-md-4">
+               <div class="container_main">
+                  <img src="{% static 'images/chicken_c.jpg' %}" alt="Avatar" class="image">
+                  <span>{{ i.title }}</span>
+                  <p class="card-price">रु{{ i.price }}</p>
+                  <div class="overlay">
+                     <div class="text"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+
+         </div>
+      </div>
+
+      <div class="gallery_section_2">
+         <div class="row">
+
+            <div class="col-md-4">
+               <div class="container_main">
+                  <img src="{% static 'images/veg_momo.jpg' %}" alt="Avatar" class="image">
+                  <span> Veg C. Momo</span>
+                  <p class="card-price">रु150</p>
+                  <div class="overlay">
+                     <div class="text"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-4">
+               {% for i in veg %}
+               <div class="container_main">
+                  <img src="{{ i.image.url }}" alt="Avatar" class="image">
+                  <span>{{ i.title }}</span>
+                  <p class="card-price">रु{{ i.price }}</p>
+                  <div class="overlay">
+                     <div class="text"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+
+         </div>
+      </div>
+      <div class="seemore_bt"><a href="#">See More</a></div>
+   </div>
+</div>
+<!-- gallery section end -->
+
+
+
+
+      
+{% endblock content %}
+   
